@@ -23,7 +23,7 @@ public class Lab1Онущаккі304 {
         int center = size / 2;
         int frameSize = size / 4;
         
-        // Створення зубчастого масиву - кожен рядок має свою довжину
+        
         Object[][] jaggedArray = new Object[size][];
         
         for (int i = 0; i < size; i++) {
@@ -32,30 +32,30 @@ public class Lab1Онущаккі304 {
             for (int j = 0; j < size; j++) {
                 Object element = null;
                 
-                // Центральний квадрат - зірочки
+                
                 if (Math.abs(i - center) <= frameSize/2 && Math.abs(j - center) <= frameSize/2) {
-                    element = '*';
+                    element = '!';
                 }
-                // Заштрихована рамка - символи користувача
+                
                 else if (Math.abs(i - center) <= frameSize && Math.abs(j - center) <= frameSize) {
                     element = fillChar;
                 }
-                // Біла область - зірочки
+               
                 else {
                     element = '*';
                 }
                 
-                // Додаємо тільки непорожні елементи (створюємо "зубці")
+                
                 if (element != null) {
                     row.add(element);
                 }
             }
             
-            // Перетворюємо ArrayList у масив для цього рядка
+           
             jaggedArray[i] = row.toArray(new Object[row.size()]);
         }
         
-        // Виведення зубчастого масиву
+        
         System.out.println("\nЗубчастий масив:");
         for (int i = 0; i < jaggedArray.length; i++) {
             System.out.printf("Рядок %d (%d елементів): ", i, jaggedArray[i].length);
@@ -65,7 +65,7 @@ public class Lab1Онущаккі304 {
             System.out.println();
         }
         
-        // Виведення у вигляді повної матриці для наочності
+        
         System.out.println("\nВигляд як повна матриця:");
         for (int i = 0; i < size; i++) {
             for (int j = 0; j < jaggedArray[i].length; j++) {
@@ -74,7 +74,7 @@ public class Lab1Онущаккі304 {
             System.out.println();
         }
         
-        // Збереження у файл
+        
         try (PrintWriter writer = new PrintWriter("output.txt")) {
             writer.println("Варіант 16 - Зубчастий масив:");
             for (int i = 0; i < jaggedArray.length; i++) {
