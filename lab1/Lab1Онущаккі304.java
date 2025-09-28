@@ -34,7 +34,7 @@ public class Lab1Онущаккі304 {
                 
                 
                 if (Math.abs(i - center) <= frameSize/2 && Math.abs(j - center) <= frameSize/2) {
-                    element = '!';
+                    element = '1';
                 }
                 
                 else if (Math.abs(i - center) <= frameSize && Math.abs(j - center) <= frameSize) {
