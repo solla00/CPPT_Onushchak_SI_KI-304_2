@@ -5,121 +5,113 @@ import java.io.PrintWriter;
 import java.util.*;
 
 /**
- * Клас <code>Lab2Онущаккі304</code> моделює роботу аудіоплеєра:
- * управління плейлистом, відтворенням та гучністю.
+ * Class <code>Lab2Онущаккі304</code> models Audio Player functionality
+ * with playlist management, playback and volume control.
  *
- * @author Онущак
- * @version 1.0
+ * @author Onushchak
+ * @version 1.1
  */
 public class Lab2Онущаккі304 {
+
     private String playerName;
     private List<String> playlist;
     private int currentTrackIndex;
     private boolean isPlaying;
     private int volume;
+    private String playbackMode;
     private PrintWriter logWriter;
 
-    
     public Lab2Онущаккі304(String playerName, List<String> initialTracks, int defaultVolume) throws FileNotFoundException {
         this.playerName = playerName;
         this.playlist = new ArrayList<>(initialTracks);
         this.currentTrackIndex = 0;
         this.isPlaying = false;
         this.volume = Math.max(0, Math.min(100, defaultVolume));
+        this.playbackMode = "Normal";
         this.logWriter = new PrintWriter("audioplayer_log.txt");
-        log("Створено плеєр: " + playerName + ", треків: " + playlist.size());
     }
 
-   
-    public Lab2Онущаккі304() throws FileNotFoundException {
-        this("DefaultPlayer", new ArrayList<>(), 50);
-    }
+    // ========== Methods ==========
 
-    
     public void play() {
         if (!playlist.isEmpty()) {
             isPlaying = true;
-            log("Відтворення: " + playlist.get(currentTrackIndex));
-            System.out.println("▶ Відтворюється: " + playlist.get(currentTrackIndex));
-        } else {
-            System.out.println("Плейлист порожній!");
+            System.out.println("Playing: " + playlist.get(currentTrackIndex));
         }
     }
 
-   
     public void pause() {
-        if (isPlaying) {
-            isPlaying = false;
-            log("Відтворення призупинено");
-            System.out.println("⏸ Призупинено");
-        }
+        isPlaying = false;
+        System.out.println("Playback paused");
     }
 
-    
     public void stop() {
         isPlaying = false;
         currentTrackIndex = 0;
-        log("Відтворення зупинено");
-        System.out.println("⏹ Зупинено");
+        System.out.println("Playback stopped");
     }
 
-    
-    public void next() {
+    public void nextTrack() {
         if (!playlist.isEmpty()) {
             currentTrackIndex = (currentTrackIndex + 1) % playlist.size();
-            log("Наступний трек: " + playlist.get(currentTrackIndex));
-            System.out.println("⏭ " + playlist.get(currentTrackIndex));
+            System.out.println("Next track: " + playlist.get(currentTrackIndex));
         }
     }
 
-    
-    public void previous() {
-        if (!playlist.isEmpty()) {
-            currentTrackIndex = (currentTrackIndex - 1 + playlist.size()) % playlist.size();
-            log("Попередній трек: " + playlist.get(currentTrackIndex));
-            System.out.println("⏮ " + playlist.get(currentTrackIndex));
-        }
-    }
-
-   
     public void addTrack(String track) {
         playlist.add(track);
-        log("Додано трек: " + track);
+        System.out.println("Added track: " + track);
     }
 
-    
     public void removeTrack(String track) {
         if (playlist.remove(track)) {
-            log("Видалено трек: " + track);
+            System.out.println("Removed track: " + track);
         }
     }
 
-    
     public void setVolume(int volume) {
         this.volume = Math.max(0, Math.min(100, volume));
-        log("Гучність: " + this.volume);
+        System.out.println("Volume set to " + this.volume + "%");
     }
 
-    
+    public void setPlaybackMode(String mode) {
+        this.playbackMode = mode;
+        System.out.println("Playback mode changed to: " + mode);
+    }
+
+    // ================================
+    // Formatted INFO methods
+    // ================================
+
+    public void showPlayerInfo() {
+        System.out.println("------------------- Player Info -------------------");
+        System.out.println("Name         : " + playerName);
+        System.out.println("Playlist     : " + playlist.size() + " tracks");
+        System.out.println("Volume       : " + volume + "%");
+        System.out.println("PlaybackMode : " + playbackMode);
+        System.out.println("Is Playing?  : " + (isPlaying ? "Yes" : "No"));
+        System.out.println("---------------------------------------------------");
+    }
+
     public void showPlaylist() {
-        System.out.println("Плейлист:");
+        System.out.println("------------------- Playlist ----------------------");
         for (int i = 0; i < playlist.size(); i++) {
             System.out.println((i + 1) + ". " + playlist.get(i));
         }
+        System.out.println("---------------------------------------------------");
     }
 
-    
-    private void log(String msg) {
-        logWriter.println(new Date() + " : " + msg);
-        logWriter.flush();
-    }
-
-    
-    @Override
-    protected void finalize() throws Throwable {
-        if (logWriter != null) {
-            log("Завершення роботи плеєра");
-            logWriter.close();
+    public void showFinalStatus() {
+        System.out.println("------------------- Final Status ------------------");
+        System.out.println("Name         : " + playerName);
+        System.out.println("Current Track: " + (playlist.isEmpty() ? "None" : playlist.get(currentTrackIndex)));
+        System.out.println("Volume       : " + volume + "%");
+        System.out.println("PlaybackMode : " + playbackMode);
+        System.out.println("Is Playing?  : " + (isPlaying ? "Yes" : "No"));
+        System.out.println("Playlist     :");
+        for (String track : playlist) {
+            System.out.println("   - " + track);
         }
+        System.out.println("---------------------------------------------------");
     }
 }

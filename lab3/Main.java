@@ -1,23 +1,24 @@
 package lab3;
 
-/**
- * Драйвер для перевірки роботи диктофона.
- */
 public class Main {
     public static void main(String[] args) {
-        Dictaphone dict = new Dictaphone("Sony Dictaphone", 70);
+        Dictaphone dict = new Dictaphone("Sony Dictaphone", 50);
 
-        dict.powerOn();
-        dict.setVolume(80);
+        dict.showInfo();
 
-        dict.start();   
-        dict.stop();    
+        dict.turnOn();
+        System.out.println("Sony Dictaphone is now ON.");
+        dict.setVolume(70);
 
-        dict.start();   
-        dict.stop();
+        dict.startRecording("Record_1");
+        dict.stopRecording();
 
-        dict.playAll(); 
+        dict.startRecording("Record_2");
+        dict.stopRecording();
 
-        dict.powerOff();
+        dict.playRecordings();
+
+        dict.turnOff();
+        System.out.println("Sony Dictaphone is now OFF.");
     }
 }
