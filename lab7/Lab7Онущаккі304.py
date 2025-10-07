@@ -1,26 +1,35 @@
-# Лабораторна робота 7
-# Варіант 16
-
 
 def generate_jagged_array(size, fill_char):
-  
     jagged_array = []
 
-    # межі рамки
+    
     start = size // 4
     end = size - size // 4 - 1
+
+    
+    inner_start = size // 3
+    inner_end = size - size // 3 - 1
+
+    
+    inner_char = '*'
 
     for i in range(size):
         row = []
         for j in range(size):
+            
             if (i == start or i == end) and (start <= j <= end):
                 row.append(fill_char)
             elif (j == start or j == end) and (start <= i <= end):
                 row.append(fill_char)
+
+            
+            elif (inner_start <= i <= inner_end) and (inner_start <= j <= inner_end):
+                row.append(inner_char)
+
             else:
                 row.append('*')
-        # перетворюємо список у зубчастий масив 
         jagged_array.append(row)
+
     return jagged_array
 
 
@@ -46,7 +55,7 @@ def save_to_file(jagged_array, filename="output.txt"):
 
 def main():
     size = int(input("Введіть розмір матриці (непарне число >= 5): "))
-    fill_char = input("Введіть символ для заштрихованої області: ")
+    fill_char = input("Введіть символ для зовнішньої рамки: ")
 
     if size < 5 or size % 2 == 0:
         print("Помилка: розмір має бути непарним числом, не менше 5.")
