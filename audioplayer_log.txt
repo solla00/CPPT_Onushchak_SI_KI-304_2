@@ -1,23 +1,7 @@
-Sun Sep 28 13:47:17 EEST 2025: AudioPlayer 'UkrainianMusicPlayer' створено успішно!
-Sun Sep 28 13:47:17 EEST 2025: Завантажено 5 треків
-Sun Sep 28 13:47:17 EEST 2025: Почато відтворення: Okean Elzy - Obijmy
-Sun Sep 28 13:47:17 EEST 2025: Гучність змінено з 75% на 90%
-Sun Sep 28 13:47:17 EEST 2025: Перемкнуто на наступний трек: Skryabin - Spy sobi sama
-Sun Sep 28 13:47:17 EEST 2025: Перемкнуто на наступний трек: Boombox - Vahteram
-Sun Sep 28 13:47:17 EEST 2025: Показано статус плеєра
-Sun Sep 28 13:47:17 EEST 2025: Трек 'Kalush - Stefania' додано до плейлиста
-Sun Sep 28 13:47:17 EEST 2025: Трек 'Go_A - Shum' додано до плейлиста
-Sun Sep 28 13:47:17 EEST 2025: Режим відтворення змінено з 'normal' на 'shuffle'
-Sun Sep 28 13:47:17 EEST 2025: Плейлист перемішано
-Sun Sep 28 13:47:17 EEST 2025: Відтворення призупинено
-Sun Sep 28 13:47:17 EEST 2025: Почато відтворення: Skryabin - Spy sobi sama
-Sun Sep 28 13:47:17 EEST 2025: Трек 'TNMK - Dosch' видалено з плейлиста
-Sun Sep 28 13:47:17 EEST 2025: Перемкнуто на попередній трек: Antytila - Tdme
-Sun Sep 28 13:47:17 EEST 2025: Показано статус плеєра
-Sun Sep 28 13:47:17 EEST 2025: Режим відтворення змінено з 'shuffle' на 'repeat'
-Sun Sep 28 13:47:17 EEST 2025: Режим відтворення змінено з 'repeat' на 'normal'
-Sun Sep 28 13:47:17 EEST 2025: Гучність змінено з 90% на 100%
-Sun Sep 28 13:47:17 EEST 2025: Гучність змінено з 100% на 0%
-Sun Sep 28 13:47:17 EEST 2025: Гучність змінено з 0% на 50%
-Sun Sep 28 13:47:17 EEST 2025: Відтворення зупинено та скинуто до початку
-Sun Sep 28 13:47:17 EEST 2025: Аудіоплеєр 'UkrainianMusicPlayer' завершує роботу
+Tue Oct 07 08:54:06 EEST 2025 : Створено плеєр: SonyPlayer, треків: 3
+Tue Oct 07 08:54:07 EEST 2025 : Відтворення: Track1
+Tue Oct 07 08:54:07 EEST 2025 : Наступний трек: Track2
+Tue Oct 07 08:54:07 EEST 2025 : Гучність: 90
+Tue Oct 07 08:54:07 EEST 2025 : Відтворення призупинено
+Tue Oct 07 08:54:07 EEST 2025 : Відтворення зупинено
+Tue Oct 07 08:54:07 EEST 2025 : Додано трек: NewHit
