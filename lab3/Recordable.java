@@ -1,7 +1,7 @@
 package lab3;
 
 
-public interface Recordable {
+public abstract interface Recordable {
     void startRecording(String fileName);
     void stopRecording();
     void playRecordings();

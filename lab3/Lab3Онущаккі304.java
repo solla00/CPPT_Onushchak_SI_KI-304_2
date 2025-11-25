@@ -1,12 +1,12 @@
 package lab3;
 
 
-public abstract class AudioDevice {
+public abstract class Lab3Онущаккі304 {
     protected String name;
     protected int volume;
     protected boolean isOn;
 
-    public AudioDevice(String name) {
+    public Lab3Онущаккі304(String name) {
         this.name = name;
         this.volume = 50;
         this.isOn = false;

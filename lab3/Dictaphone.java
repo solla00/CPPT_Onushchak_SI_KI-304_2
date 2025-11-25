@@ -3,7 +3,7 @@ package lab3;
 import java.util.ArrayList;
 import java.util.List;
 
-public class Dictaphone extends AudioDevice implements Recordable {
+public class Dictaphone extends Lab3Онущаккі304 implements Recordable {
     private boolean isRecording;
     private List<String> recordings;
 

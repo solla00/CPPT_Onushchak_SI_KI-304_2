@@ -31,7 +31,16 @@ public class Lab2Онущаккі304 {
         this.logWriter = new PrintWriter("audioplayer_log.txt");
     }
 
-    // ========== Methods ==========
+     public Lab2Онущаккі304() throws FileNotFoundException {
+        this.playerName = "DefaultPlayer";
+        this.playlist = new ArrayList<>();
+        this.currentTrackIndex = 0;
+        this.isPlaying = false;
+        this.volume = 50;
+        this.playbackMode = "normal";
+        this.logWriter = new PrintWriter("audioplayer_log.txt");
+    }
+
 
     public void play() {
         if (!playlist.isEmpty()) {
